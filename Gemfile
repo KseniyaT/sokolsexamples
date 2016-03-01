@@ -23,7 +23,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 #BD
-gem 'sqlite3'
+gem 'pg'
+#gem 'sqlite3'
 
 ruby "2.3.0"
 
