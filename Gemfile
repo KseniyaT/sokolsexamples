@@ -22,6 +22,8 @@ gem 'turbolinks'
 # extra
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+# Transloadit is an add-on for file uploading & importing, video & audio encoding, image manipulation, watermarking, document conversion and a lot more.
+gem 'transloadit'
 
 #BD
 gem 'pg'
