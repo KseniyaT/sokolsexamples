@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       get 'birds'
     end
   end
+  #get 'css/index'
+  #post 'css/index', to: 'css#index'
   #get 'css/birds'
+  #post 'css/birds', to: 'css#birds'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

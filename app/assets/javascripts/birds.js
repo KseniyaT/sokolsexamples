@@ -1,7 +1,9 @@
 function doAtOnload() {
   var sound = document.getElementById('player')
     , birds = document.getElementById('bird-main');
-  if (birds && birds.length > 0) {
+  console.log('here');
+  if (birds != null && typeof birds != 'undefined') {
+    console.log('playing');
     birds.hover(function(){
       sound.volume = 1.0;
       sound.play();
@@ -18,7 +20,7 @@ Object.prototype.hover =  Object.prototype.hover || function(mouseenter, mousele
 
 
 function fadeAudio (sound) {
-  var fadePoint = sound.duration - 2; // Set the point in playback that fadeout begins. This is for a 2 second fade out.
+  var fadePoint = sound.duration - 2; // This is for a 2 second fade out.
   var fadeAudio = setInterval(function () {
     if ((sound.currentTime <= fadePoint) ) { // Only fade if past the fade out point or not at zero already
       if (sound.volume*10 > 0) {
@@ -32,11 +34,12 @@ function fadeAudio (sound) {
 }
 
 
-if (window.addEventListener)
+if (window.addEventListener) {
   window.addEventListener("load", doAtOnload, false);
-else if (window.attachEvent)
+} else if (window.attachEvent) {
   window.attachEvent("onload", doAtOnload);
-else window.onload = doAtOnload;
-
+} else {
+  window.onload = doAtOnload
+};
 
 
