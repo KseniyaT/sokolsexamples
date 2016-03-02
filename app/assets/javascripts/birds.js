@@ -1,9 +1,7 @@
 function doAtOnload() {
   var sound = document.getElementById('player')
     , birds = document.getElementById('bird-main');
-  console.log('here');
   if (birds != null && typeof birds != 'undefined') {
-    console.log('playing');
     birds.hover(function(){
       sound.volume = 1.0;
       sound.play();
