@@ -1,0 +1,48 @@
+/= render partial: "blocks/desription"
+section.section
+  .container
+    .row
+      .col-12
+        .puzzle-container
+          canvas height='320' width='320' id='puzzle_canvas'
+section.section
+  .container
+    .row
+      .col-12
+        h3 Description
+        p Lorem ipsum
+section.section
+  .container
+    .row
+      .col-12
+        p
+          span.strong
+            ' Supported browsers:
+          ' IE 9+, Firefox 43+, Chrome 45+, Safari 9+, Opera 35+, Mobile - does not support
+        p
+          span.strong
+            ' Responsability:
+          ' no
+/select#myselect
+/  option value="0" 0
+/  option value="1" 1
+/  option value="2" 2
+/  option value="3" 3
+/javascript:
+/  var mySelect = document.getElementById('myselect');
+/  if(mySelect != null && typeof mySelect != 'undefined') {
+/    var index = localStorage.getItem("selectedIndex");
+/    if (index != null) {
+/      var options = mySelect.getElementsByTagName('option');
+/      for (var i=0; i<options.length; i++) {
+/        if (options[i].hasAttribute("selected") && i != index) {
+/          options[i].removeAttribute("selected");
+/        } else if (i == index) {
+/          options[i].setAttribute("selected", "true");
+/        }
+/      }
+/    }
+/    mySelect.onchange = function(){
+/      localStorage.setItem("selectedIndex", this.selectedIndex)
+/    }
+/  }

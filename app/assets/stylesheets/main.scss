@@ -1,0 +1,111 @@
+@import "compass";
+@import "colors";
+
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin justify-content($foo) {
+  -webkit-justify-content: $foo;
+  -moz-justify-content: $foo;
+  -ms-justify-content: $foo;
+  justify-content: $foo;
+}
+@mixin align-items($foo) {
+  -webkit-align-items: $foo;
+  -moz-align-items: $foo;
+  -ms-align-items: $foo;
+  align-items: $foo;
+}
+@mixin flex-direction($foo) {
+  -webkit-flex-direction: $foo;
+  -moz-flex-direction: $foo;
+  -ms-flex-direction: $foo;
+  flex-direction: $foo;
+}
+
+
+html, body {
+  @include box-sizing(border-box);
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+*,
+*::after, *::before {
+  @include box-sizing(border-box);
+}
+
+.clearfix {
+  &::after, &::before {
+    content: ' ';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.white {
+  @include text-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+  color: #FFF;
+}
+
+
+.flexbox-centred-container {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+  height: 100vh;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.controls {
+  margin-bottom: 30px;
+  &::after, &::before {
+    content: ' ';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.btn {
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(center top , #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: #e6e6e6 #e6e6e6 #a2a2a2;
+  border-image: none;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 0;
+  padding: 4px 14px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+}

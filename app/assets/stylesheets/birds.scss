@@ -5,49 +5,24 @@
 @import url(https://fonts.googleapis.com/css?family=Great+Vibes);
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
 
-html, body {
-  position: relative;
-  height: 100%;
-}
-*,
-*::after, *::before {
-  @include box-sizing(border-box);
-}
-.clearfix {
-  &::after, &::before {
-    content: ' ';
-    display: table;
-  }
-  &::after {
-    clear: both;
-  }
-}
-.text-center {
-  text-align: center;
-}
 
-p {
-  color: $text;
-  font-family: 'Droid Sans', sans-serif;
-  margin: 0 0 10px;
-  padding: 0;
-}
-.container {
-  &::after, &::before {
-    content: ' ';
-    display: table;
-  }
-  &::after {
-    clear: both;
-  }
+
+.bird-bg-container {
   width: 768px;
   height: 768px;
   margin: auto;
   background-color: $peach;
   background-image: image-url('bg/heart-bg.jpg');
   background-repeat: repeat;
+  &::after, &::before {
+    content: ' ';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
 }
-.box {
+.bird-border-box {
   @include border-radius(30px);
   width: 748px;
   height: 748px;
@@ -57,6 +32,7 @@ p {
 .bird-container {
   position: relative;
   height: 520px;
+  margin-top: 45px;
 }
 .bird-bg {
   position: absolute;
@@ -507,6 +483,13 @@ p {
 .birds-annotation {
   max-width: 435px;
   margin: auto;
+}
+
+.droid-sans {
+  color: $text;
+  font-family: 'Droid Sans', sans-serif;
+  margin: 0 0 10px;
+  padding: 0;
 }
 
 @keyframes planting_in {

@@ -1,0 +1,60 @@
+#doily-container.doily-container
+  canvas id="canvas" width="1000" height="1000"
+/a href="data:image/png;base64,asdasd..." Download
+javascript:
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  
+  ctx.fillStyle = "#fff";
+  ctx.beginPath();
+  ctx.arc(500,500,400,0,Math.PI*2,true);
+  ctx.closePath();
+  ctx.fill();
+  var angle = 0;
+  while (angle <= 360) {
+    var ang = angle * Math.PI / 180;
+
+    var cos = Math.cos(ang)
+      , sin = Math.sin(ang);
+
+    var x1 = 500 + 413 * cos
+      , y1 = 500 + 413 * sin;
+
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(x1,y1,55,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+
+    var x2 = 500 + 415 * cos;
+    var y2 = 500 + 415 * sin;
+
+    ctx.fillStyle = "#000";
+    ctx.beginPath();
+    ctx.arc(x2,y2,15,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+
+    angle += 15;
+  }
+
+  /*
+  var button = document.createElement('button');
+  button.className = "btn";
+  button.innerHTML = "Download";
+  document.body.appendChild(button);
+
+  var imgSrc = canvas.toDataURL("image/png");
+  var url = imgSrc.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+  button.onclick = function(){
+    window.open(imgSrc);
+  };
+
+  var img = document.createElement('img');;
+  img.src = imgSrc;
+  document.body.appendChild(img);
+
+
+  var img = canvas.toDataURL("image/png");
+  document.write('<img src="'+img+'"/>');*/
+

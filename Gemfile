@@ -6,11 +6,13 @@ gem 'rails', '4.1.0'
 
 #HTML
 gem 'slim-rails',     '~> 3.0.1'
+gem 'simple_form'
 
 # CSS
 gem 'sass-rails', '~> 4.0.3'
 gem 'compass-rails'
 gem 'animation'
+gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 
 # JavaScript
 gem 'uglifier', '>= 1.3.0'

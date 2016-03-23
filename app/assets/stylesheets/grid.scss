@@ -1,0 +1,174 @@
+.container {
+  &::after, &::before {
+    content: ' ';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.row {
+  margin-left: -30px;
+  &::before, &::after {
+    content: "";
+    display: table;
+    line-height: 0;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+[class*="col"] {
+  float: left;
+  margin-left: 30px;
+  min-height: 1px;
+}
+.col-12 {
+  width: 1170px;
+}
+.col-11 {
+  width: 1070px;
+}
+.col-10 {
+  width: 970px;
+}
+.col-9 {
+  width: 870px;
+}
+.col-8 {
+  width: 770px;
+}
+.col-7 {
+  width: 670px;
+}
+.col-6 {
+  width: 570px;
+}
+.col-5 {
+  width: 470px;
+}
+.col-4 {
+  width: 370px;
+}
+.col-3 {
+  width: 270px;
+}
+.col-2 {
+  width: 170px;
+}
+.col-1 {
+  width: 70px;
+}
+
+@media only screen and (max-width: 1240px),
+only screen and (max-device-width: 1240px) {
+  .container {
+    width: 940px;
+  }
+  .row {
+    margin-left: -20px;
+  }
+  [class*="col"] {
+    margin-left: 20px;
+  }
+  .col-12 {
+    width: 940px;
+  }
+  .col-11 {
+      width: 860px;
+  }
+  .col-10 {
+      width: 780px;
+  }
+  .col-9 {
+      width: 700px;
+  }
+  .col-8 {
+      width: 620px;
+  }
+  .col-7 {
+      width: 540px;
+  }
+  .col-6 {
+      width: 460px;
+  }
+  .col-5 {
+      width: 380px;
+  }
+  .col-4 {
+      width: 300px;
+  }
+  .col-3 {
+      width: 220px;
+  }
+  .col-2 {
+      width: 140px;
+  }
+  .col-1 {
+      width: 60px;
+  }
+}
+
+@media only screen and (max-width: 980px),
+only screen and (max-device-width: 980px) {
+  .container {
+    width: 724px;
+  }
+  .col-12 {
+    width: 724px;
+  }
+  .col-11 {
+    width: 662px;
+  }
+  .col-10 {
+    width: 600px;
+  }
+  .col-9 {
+    width: 538px;
+  }
+  .col-8 {
+    width: 476px;
+  }
+  .col-7 {
+    width: 414px;
+  }
+  .col-6 {
+    width: 352px;
+  }
+  .col-5 {
+    width: 290px;
+  }
+  .col-4 {
+    width: 228px;
+  }
+  .col-3 {
+    width: 166px;
+  }
+  .col-2 {
+    width: 104px;
+  }
+  .col-1 {
+    width: 42px;
+  }
+}
+@media only screen and (max-width: 768px),
+only screen and (max-device-width: 768px) {
+  .container {
+    width: auto;
+  }
+  .row {
+    padding: 0 20px;
+    margin-left: 0;
+  }
+  [class*="col"] {
+    display: block;
+    float: none;
+    margin-left: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}

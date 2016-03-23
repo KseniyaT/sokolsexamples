@@ -1,0 +1,9 @@
+@import "compass";
+
+.puzzle-container {
+  @include box-shadow(1px 1px 6px #1B3848);
+  width: 324px;
+  line-height: 0;
+  border: 2px solid #1B3848;
+  margin: auto;
+}

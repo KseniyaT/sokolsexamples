@@ -1,0 +1,9 @@
+- if current_page?(root_path)
+  - header_id = "header_root"
+- else
+  - header_id = "header"
+
+header class="#{header_id}" id="#{header_id}"
+  #logo
+    h1.text-logo
+      = link_to 'Main  page', root_path

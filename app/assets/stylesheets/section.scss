@@ -1,0 +1,105 @@
+@import "compass";
+@import "animation";
+@import "colors";
+
+.header,
+.header_root {
+  width: 100%;
+  height: 4.5rem;
+  position: static;
+  line-height: 4.5rem;
+  background: $dark-blue;
+  padding: 0 30px;
+  z-index: 100;
+  cursor: default;
+  &, a {
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+.header_root {
+  @include animation(0s linear 0s none);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+}
+.header_top {
+  @include animation(0.5s linear 0s fixed-header);
+  position: fixed;
+  background-color: $dark-blue;
+  &, a {
+    color: #CCC;
+  }
+}
+.text-logo {
+  font-size: 1.5rem;
+}
+.footer {
+  background-color: $dark-blue;
+}
+
+
+
+.logo {
+  width: 170px;
+  height: 105px;
+}
+.section {
+  text-align: center;
+  padding: 50px 0;
+}
+.section_logo {
+  height: 100vh;
+  background: image-url("bg/computers-l.jpg") no-repeat center center #C5C7C6;
+  @include background-size(cover);
+  background-attachment: fixed;
+}
+.section_main {
+  background-color: #EFEFEF;
+}
+.section_contacts {
+  background-color: $blue;
+}
+.section_block {
+
+}
+.thumbnail {
+  @include border-radius(3px);
+  display: block;
+  color: $grey;
+  text-decoration: none;
+  padding: 20px;
+  background-color: #FFF;
+  border: 1px solid $light-grey;
+}
+.thumbnail-img {
+  @include border-radius(50%);
+  width: 70px;
+  height: 70px;
+  color: #FFF;
+  font-size: 2.5rem;
+  line-height: 70px;
+  background-color: $coral;
+  margin: 0 auto 15px;
+}
+.thumbnail-img_css {
+  background-color: $blue;
+}
+.thumbnail-img_js {
+  background-color: $brash-green;
+}
+
+@keyframes fixed-header {
+  0% {
+    top: -4.5rem;
+    background: rgba(0, 0, 0, 0);
+  }
+  50% {
+    top: -2.25rem;
+    background: rgba(57, 60, 69, .5);
+  }
+  100% {
+    top: 0;
+    background: rgba(57, 60, 69, 1);
+  }
+}

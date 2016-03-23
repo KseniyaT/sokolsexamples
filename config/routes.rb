@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
 
   root 'home#index'
+
   resources :css do
     collection do
       get 'index'
       get 'birds'
     end
   end
-  #get 'css/index'
-  #post 'css/index', to: 'css#index'
-  #get 'css/birds'
-  #post 'css/birds', to: 'css#birds'
+
+  resources :js do
+    collection do
+      get 'index'
+      get 'doily'
+      get 'tetris'
+      get 'fifteen_puzzle'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

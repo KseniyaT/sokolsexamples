@@ -1,1 +1,47 @@
-= link_to 'CSS', css_index_path
+section.section.section_logo
+  .container
+    .row
+      .col-12
+        .flexbox-centred-container
+          = image_tag "logo/sokol.png", class: "logo"
+          h1.white Hello World!
+          p.white There are examples of my imagination. I use web technologies for developing them!
+section.section.section_main
+  .container
+    .row
+      .col-12
+        h2.text-center.mb-40 Technologies
+      .col-4
+        = link_to(css_index_path, class: 'thumbnail') do
+          .thumbnail-img.thumbnail-img_css
+            i.fa.fa-css3
+          h3.thumbnail-label CSS
+          p.thumbnail-description There are some strange things that were creating by css
+      .col-4
+        = link_to(js_path, class: 'thumbnail') do
+          .thumbnail-img.thumbnail-img_js
+            i.fa.fa-jsfiddle
+          h3.thumbnail-label JS
+          p.thumbnail-description There are some strange things that were creating by JavaScript
+      .col-4
+        .thumbnail
+          .thumbnail-img
+            i.fa.fa-question
+          h3.thumbnail-label ?
+          p.thumbnail-description I do not know yet what should be here
+section.section.section_contacts
+  = simple_form_for "" do |f|
+    .container
+      .row
+        .col-12
+          h2.mb-40 Get in touch
+        .col-6
+          = f.input :username, label: false, wrapper_html: { class: 'controls' }
+        .col-6
+          = f.input :email, placeholder: 'user@domain.com', label: false, wrapper_html: { class: 'controls' }
+        .col-12
+          = f.input :description, as: :text, placeholder: 'That is temporary block, it will be change soon!', label: false, wrapper_html: { class: 'controls' }
+          = f.button :submit, input_html: { class: 'btn' }
+
+
+

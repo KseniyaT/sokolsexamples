@@ -1,0 +1,10 @@
+@import "compass";
+@import "colors";
+
+.doily-container {
+  text-align: center;
+  background-color: pink;
+  canvas {
+    display: inline-block;
+  }
+}

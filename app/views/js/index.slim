@@ -1,0 +1,17 @@
+section.section.section_main
+  .container
+    .row
+      .col-4
+        = link_to(doily_js_path, class: 'thumbnail') do
+          .thumbnail-img.thumbnail-img_css
+            i.fa.fa-html5
+          h3.thumbnail-label Doily (by canvas)
+          p.thumbnail-description Only cute doily
+      .col-4
+        = link_to(fifteen_puzzle_js_path, class: 'thumbnail') do
+          .thumbnail-img.thumbnail-img_js
+            i.fa.fa-html5
+          h3.thumbnail-label Fifteen puzzle (by canvas)
+          p.thumbnail-description Game from our childhood
+
+/= link_to 'Тетрис', tetris_js_path
