@@ -64,7 +64,6 @@ html, body {
   color: #FFF;
 }
 
-
 .flexbox-centred-container {
   @include flexbox();
   @include justify-content(center);
@@ -75,6 +74,9 @@ html, body {
 
 .strong {
   font-weight: bold;
+}
+.danger {
+  color: $orange;
 }
 
 .controls {
@@ -88,9 +90,13 @@ html, body {
   }
 }
 
+.relative {
+  position: relative;
+}
+
 .btn {
   background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(center top , #ffffff, #e6e6e6);
+  background-image: linear-gradient(center top , #ffffff, #e6e6e6);
   background-repeat: repeat-x;
   border-color: #e6e6e6 #e6e6e6 #a2a2a2;
   border-image: none;

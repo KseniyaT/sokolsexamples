@@ -25,6 +25,7 @@ a {
   text-decoration: none;
 }
 
+select,
 textarea,
 input,
 input[type="text"],
@@ -39,7 +40,7 @@ input[type="email"] {
   color: $grey;
   background-color: #FFF;
   border: 1px solid $light-grey;
-  padding: 14px 16px;
+  padding: 10px 16px;
 }
 
 button,
@@ -50,9 +51,12 @@ textarea {
   margin: 0;
   vertical-align: middle;
 }
+select,
 button,
+input,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  height: 40px;
   cursor: pointer;
 }

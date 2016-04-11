@@ -13,5 +13,10 @@ section.section.section_main
             i.fa.fa-html5
           h3.thumbnail-label Fifteen puzzle (by canvas)
           p.thumbnail-description Game from our childhood
-
+      .col-4
+        = link_to(race_js_path, class: 'thumbnail') do
+          .thumbnail-img.thumbnail-img_js
+            i.fa.fa-jsfiddle
+          h3.thumbnail-label Race
+          p.thumbnail-description Hedgehogs race
 /= link_to 'Тетрис', tetris_js_path

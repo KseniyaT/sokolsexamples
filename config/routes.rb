@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'doily'
       get 'tetris'
       get 'fifteen_puzzle'
+      get 'race'
     end
   end
 

@@ -1,0 +1,90 @@
+@import "compass";
+@import "colors";
+
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+
+.race-container {
+  font-family: 'Walter Turncoat', cursive;
+  position: relative;
+  height: 440px;
+  background: image-url("bg/grass.png") no-repeat center center;
+  @include background-size(100% auto);
+}
+.rate-form {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -96px;
+}
+.fate-form-field {
+  font-family: inherit;
+  margin-bottom: 5px;
+}
+.race {
+  position: absolute;
+  width: 400px;
+  bottom: 210px;
+  left: 50%;
+  margin-left: -200px;
+}
+.hedgehog {
+  background: image-url("bg/hedgehog.png") no-repeat center center;
+  @include background-size(100% 100%);
+  &:nth-of-type(2n) {
+    -webkit-filter: hue-rotate(340deg) saturate(200%);
+    filter: hue-rotate(340deg) saturate(200%);
+    .hedgehog-name {
+      -webkit-filter: hue-rotate(340deg) saturate(100%);
+      filter: hue-rotate(340deg) saturate(100%);
+    }
+  }
+  &:nth-of-type(3n) {
+    -webkit-filter: hue-rotate(160deg) saturate(200%);
+    filter: hue-rotate(160deg) saturate(200%);
+    .hedgehog-name {
+      -webkit-filter: hue-rotate(70deg) saturate(100%);
+      filter: hue-rotate(70deg) saturate(100%);
+    }
+  }
+}
+.hedgehog_winner {
+  width: 47px !important;
+  height: 55px !important;
+  left: auto !important;
+  right: -65px !important;
+  background-image: image-url("bg/hedgehog_winner.png");
+}
+.hedgehog-name {
+  position: absolute;
+  top: -24px;
+  font-size: 24px;
+  color: $orange;
+  margin: 0;
+}
+.rate-result {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+}
+.rate-popup {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 300px;
+  background-color: #FFF;
+  padding: 20px;
+  margin: auto;
+}
+.popup-cross {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}

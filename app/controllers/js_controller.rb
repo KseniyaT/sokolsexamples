@@ -7,4 +7,6 @@ class JsController < ApplicationController
   end
   def fifteen_puzzle
   end
+  def race
+  end
 end
