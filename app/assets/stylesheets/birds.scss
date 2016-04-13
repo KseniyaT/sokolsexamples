@@ -462,15 +462,15 @@
   }
   &::before {
     @include transform(rotate(-110deg));
-    @include transform-origin(11px, 11px);
+    @include transform-origin(10px, 12px);
   }
   &::after {
     @include transform(rotate(110deg));
-    @include transform-origin(11px, 11px);
+    @include transform-origin(10px, 10px);
   }
   &:nth-child(2) {
     @include transform(rotate(57deg));
-    @include transform-origin(11px, 11px);
+    @include transform-origin(12px, 11px);
   }
 }
 .flower-petal::before,

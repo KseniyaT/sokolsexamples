@@ -94,6 +94,11 @@ html, body {
   position: relative;
 }
 
+.main-container {
+  position: relative;
+  min-height: calc(100vh - 108px);
+}
+
 .btn {
   background-color: #f5f5f5;
   background-image: linear-gradient(center top , #ffffff, #e6e6e6);
