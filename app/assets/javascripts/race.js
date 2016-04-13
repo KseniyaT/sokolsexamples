@@ -1,5 +1,5 @@
 function race(){
-  var race = document.getElementById("hedgehog");
+  var race = document.getElementById("race");
   if (race != null && typeof race != 'undefined') {
     var hedgehodsNamesArr = ["Billy", "Willy", "Dilly"];
     fillRateSelect("rate-select", hedgehodsNamesArr);
