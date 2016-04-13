@@ -1,12 +1,26 @@
 function race(){
-  var hedgehodsNamesArr = ["Billy", "Willy", "Dilly"];
-  fillRateSelect("rate-select", hedgehodsNamesArr);
+  var race = document.getElementById("hedgehog");
+  if (race != null && typeof race != 'undefined') {
+    var hedgehodsNamesArr = ["Billy", "Willy", "Dilly"];
+    fillRateSelect("rate-select", hedgehodsNamesArr);
 
-  var hedgehog = "hedgehog";
-  drawRacers("race", hedgehog);
-  var hedgehogs = document.querySelectorAll("."+hedgehog);
-  drawNames(hedgehogs, hedgehodsNamesArr);
-  submitRateForm(hedgehog);
+    var hedgehog = "hedgehog";
+    drawRacers("race", hedgehog);
+    var hedgehogs = document.querySelectorAll("."+hedgehog);
+    drawNames(hedgehogs, hedgehodsNamesArr);
+    submitRateForm(hedgehog);
+  }
+}
+
+function fillRateSelect(_id, optionValue){
+  var select = document.getElementById(_id)
+    , option;
+  for(var i=0; i < optionValue.length; i++) {
+    option = document.createElement("option");
+    option.value = i;
+    option.innerHTML = optionValue[i];
+    select.appendChild(option);
+  }
 }
 
 function disableRateSelect(select, flag){
@@ -55,38 +69,6 @@ function doAfterCloseResult(obj, select){
   disableRateSelect(select, false);
 }
 
-function submitRateForm(hedgehog){
-  var hedgehogs = document.querySelectorAll("."+hedgehog);
-
-  document.getElementById("rate-form").onsubmit = function(event){
-    event.preventDefault();
-
-    var select = document.getElementById("rate-select")
-      , selectedIndex = select.selectedIndex;
-    disableRateSelect(select, true);
-
-    var accelerate_coefs = shuffleArray([1, 1.2, 1.4]) // shuffleArray see at fifteen-puzzle.js
-      , maxIndex = getMaxArrayIndex(accelerate_coefs)
-      , win = compareRateValue(maxIndex, selectedIndex);
-
-    [].slice.call(hedgehogs).forEach(function(item, i, arr) {
-      item.removeClass("hedgehog_winner");
-      animate(
-        function(timePassed) {
-          movingRacers(item, timePassed, accelerate_coefs[i]);
-        }, 2000, function(){
-          if (i === maxIndex) {
-            item.addClass("hedgehog_winner");
-          }
-          if(i === 0) {
-            showRateResult(win, document.getElementById("race-container"), select);
-          }
-        }
-      );
-    });
-  }
-}
-
 function drawRacers(_id, hedgehog){
   var race = document.getElementById(_id);
   if (race != null && typeof race != 'undefined') {
@@ -110,6 +92,7 @@ function drawRacers(_id, hedgehog){
 }
 
 function drawNames(hedgehogs, namesArr){
+  if (!hedgehogs || !namesArr) return;
   var hedgehogArr;
   if (Object.prototype.toString.call(hedgehogs) === '[object Array]' ) {
     hedgehogArr = hedgehogs;
@@ -124,6 +107,39 @@ function drawNames(hedgehogs, namesArr){
   });
 }
 
+
+function submitRateForm(hedgehog){
+  var hedgehogs = document.querySelectorAll("."+hedgehog);
+
+  document.getElementById("rate-form").onsubmit = function(event){
+    event.preventDefault();
+
+    var select = document.getElementById("rate-select")
+      , selectedIndex = select.selectedIndex;
+    disableRateSelect(select, true);
+
+    var accelerate_coefs = shuffleArray([1, 1.2, 1.4]) // shuffleArray see at fifteen-puzzle.js
+      , maxIndex = getMaxArrayIndex(accelerate_coefs)
+      , win = compareRateValue(maxIndex, selectedIndex);
+
+    [].slice.call(hedgehogs).forEach(function(item, i) {
+      item.removeClass("hedgehog_winner");
+      animate(
+        function(timePassed) {
+          movingRacers(item, timePassed, accelerate_coefs[i]);
+        }, 2000, function(){
+          if (i === maxIndex) {
+            item.addClass("hedgehog_winner");
+          }
+          if(i === 0) {
+            showRateResult(win, document.getElementById("race-container"), select);
+          }
+        }
+      );
+    });
+  }
+}
+
 // в то время как timePassed идёт от 0 до 2000
 // left принимает значения от 0 до 400px
 function movingRacers(obj, timePassed, coef) {
@@ -132,17 +148,6 @@ function movingRacers(obj, timePassed, coef) {
     obj.css({left: timePassed*coef / 5 + "px"});
   } else {
     obj.css({left: "400px"});
-  }
-}
-
-function fillRateSelect(_id, optionValue){
-  var select = document.getElementById(_id)
-    , option;
-  for(var i=0; i < optionValue.length; i++) {
-    option = document.createElement("option");
-    option.value = i;
-    option.innerHTML = optionValue[i];
-    select.appendChild(option);
   }
 }
 
